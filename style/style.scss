@@ -126,6 +126,7 @@
   @media screen and (max-width: 1480px) {
     padding: 30px;
   }
+
   @media screen and (max-width: 1160px) {
     padding: 15px;
     gap: 20px;
@@ -133,6 +134,15 @@
     justify-content: center;
     align-items: center;
   }
+  @media screen and (max-height: 1051px) {
+    padding: 15px 10px 10px 10px;
+    justify-content: space-between;
+    gap: 0;
+    h3 {
+      margin: 0;
+    }
+  }
+
 }
 .grid-item2__content {
   @media screen and (max-width: 600px) {
