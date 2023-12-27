@@ -16,7 +16,7 @@
 .header__link {
   position: relative;
   text-transform: uppercase;
-  transition: 0.5s;
+  transition: 0.3s;
   &:nth-child(1)::after,
   &:nth-child(4)::after {
     content: ".";
@@ -272,6 +272,10 @@
     color: $light-gray;
     padding: 20px 65px;
     border: 1px solid $light-gray;
+    transition: 0.3s;
+    &:hover {
+      background-color: $hover-text-color;
+    }
   }
 }
 .mailing {
@@ -296,11 +300,18 @@
   input {
     width: 400px;
     height: 70px;
+    padding-left: 30px;
   }
   button {
     width: 170px;
     height: 70px;
     margin-left: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    &:hover {
+      background-color: $hover-text-color;
+      transition: all 0.3s ease;
+    }
     @media screen and (max-width: 650px) {
       margin-left: 0;
       width: 400px;
