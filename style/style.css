@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import "./reset.css";
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap");
 * {
@@ -131,6 +130,13 @@ p {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas: "item1 item2" "item3 item4" "item5 item6";
+  }
+}
+@media screen and (max-width: 500px) {
+  .work {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: "item2 " "item1" "item3 " "item4" "item6 " "item5";
   }
 }
 @media screen and (max-height: 650px) {
@@ -378,7 +384,7 @@ p {
 
 .item-row-item_1,
 .item-row-item_2,
-.shop__item-row,
+.row-hover,
 .column2-1,
 .column2-2,
 .row3-1,
@@ -386,38 +392,81 @@ p {
 .shop__row-item_2 {
   position: relative;
   overflow: hidden;
+  transition: 0.3s ease;
 }
-.item-row-item_1:hover::before,
-.item-row-item_2:hover::before,
-.shop__item-row:hover::before,
-.column2-1:hover::before,
-.column2-2:hover::before,
-.row3-1:hover::before,
-.shop__row-item_1:hover::before,
-.shop__row-item_2:hover::before {
+.item-row-item_1::before, .item-row-item_1::after,
+.item-row-item_2::before,
+.item-row-item_2::after,
+.row-hover::before,
+.row-hover::after,
+.column2-1::before,
+.column2-1::after,
+.column2-2::before,
+.column2-2::after,
+.row3-1::before,
+.row3-1::after,
+.shop__row-item_1::before,
+.shop__row-item_1::after,
+.shop__row-item_2::before,
+.shop__row-item_2::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(100, 194, 158, 0.3960784314);
+  transition: background-color 0.5s ease;
+}
+.item-row-item_1::before,
+.item-row-item_2::before,
+.row-hover::before,
+.column2-1::before,
+.column2-2::before,
+.row3-1::before,
+.shop__row-item_1::before,
+.shop__row-item_2::before {
+  background-color: rgba(0, 255, 0, 0);
   z-index: 1;
+}
+.item-row-item_1::after,
+.item-row-item_2::after,
+.row-hover::after,
+.column2-1::after,
+.column2-2::after,
+.row3-1::after,
+.shop__row-item_1::after,
+.shop__row-item_2::after {
+  content: url("../img/shop-ico.png");
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+.item-row-item_1:hover::before,
+.item-row-item_2:hover::before,
+.row-hover:hover::before,
+.column2-1:hover::before,
+.column2-2:hover::before,
+.row3-1:hover::before,
+.shop__row-item_1:hover::before,
+.shop__row-item_2:hover::before {
+  background-color: rgba(100, 194, 158, 0.3960784314);
 }
 .item-row-item_1:hover::after,
 .item-row-item_2:hover::after,
-.shop__item-row:hover::after,
+.row-hover:hover::after,
 .column2-1:hover::after,
 .column2-2:hover::after,
 .row3-1:hover::after,
 .shop__row-item_1:hover::after,
 .shop__row-item_2:hover::after {
-  content: url("../img/shop-ico.png");
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Центрирование иконки */
-  z-index: 2; /* Чтобы иконка была выше маски */
+  opacity: 1;
 }
 
 .shop__bottom {

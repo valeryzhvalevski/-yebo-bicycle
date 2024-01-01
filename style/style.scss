@@ -88,6 +88,18 @@
       "item3 item4"
       "item5 item6";
   }
+  @media screen and (max-width: 500px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+      "item2 "
+      "item1"
+      "item3 "
+      "item4"
+      "item6 "
+      "item5";
+  }
+
   @media screen and (max-height: 650px) {
     height: 260vh;
   }
@@ -278,7 +290,7 @@
 }
 .item-row-item_1,
 .item-row-item_2,
-.shop__item-row,
+.row-hover,
 .column2-1,
 .column2-2,
 .row3-1,
@@ -286,26 +298,46 @@
 .shop__row-item_2 {
   position: relative;
   overflow: hidden;
+  transition: 0.3s ease;
+  // background-size:cover;
+  // background-repeat: no-repeat;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: background-color 0.5s ease;
+  }
+  &::before {
+    background-color: rgba(0, 255, 0, 0);
+    z-index: 1;
+  }
+  &::after {
+    content: url("../img/shop-ico.png");
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+  }
   &:hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #64c29e65; 
-  z-index: 1; 
+    background-color: #64c29e65;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+  // &:hover {
+  //   background-size: 120%;
+  // }
 }
-&:hover::after {
-  content: url('../img/shop-ico.png'); 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Центрирование иконки */
-  z-index: 2; /* Чтобы иконка была выше маски */
-} 
-}
-
 .shop__bottom {
   height: 200px;
   background-color: #282f35;
@@ -315,7 +347,6 @@
   @media screen and (max-width: 900px) {
     height: 150px;
   }
-
   a {
     color: $light-gray;
     padding: 20px 65px;
@@ -349,7 +380,6 @@
     align-items: center;
     gap: 20px;
   }
-
   input {
     width: 400px;
     height: 70px;
