@@ -37,8 +37,6 @@
     display: block;
   }
 }
-// .main {
-// }
 .about {
   background-color: $light-gray;
   display: flex;
@@ -46,6 +44,9 @@
   align-items: center;
   gap: 25px;
   padding: 120px 0 140px 0;
+  @media screen and (max-width: 425px) {
+    padding: 50px 0 40px 0;
+  }
 }
 .about__title {
   text-align: center;
@@ -87,6 +88,18 @@
       "item3 item4"
       "item5 item6";
   }
+  @media screen and (max-height: 650px) {
+    height: 260vh;
+  }
+
+  @media screen and (max-width: 380px) {
+    height: 190vh;
+  }
+}
+.work__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .grid-item1 {
   grid-area: item1;
@@ -122,11 +135,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 33px;
   @media screen and (max-width: 1480px) {
     padding: 30px;
   }
-
   @media screen and (max-width: 1160px) {
     padding: 15px;
     gap: 20px;
@@ -142,7 +155,9 @@
       margin: 0;
     }
   }
-
+  @media screen and (max-height: 645px) {
+    height: 100%;
+  }
 }
 .grid-item2__content {
   @media screen and (max-width: 600px) {
@@ -155,9 +170,13 @@
 .content-grid-item__bottom-item6 {
   height: 33.333%;
 }
+.content-grid-item__bottom-item2,
 .content-grid-item__bottom-item6,
 .content-grid-item__bottom-item3 {
   @media screen and (max-width: 600px) {
+    display: none;
+  }
+  @media screen and (max-height: 645px) {
     display: none;
   }
 }
@@ -180,7 +199,6 @@
   @media screen and (max-width: 900px) {
     padding: 45px 0 60px 0;
   }
-
 }
 .twitter__img {
   margin-bottom: 40px;
@@ -285,14 +303,14 @@
   align-items: center;
   justify-content: center;
   gap: 40px;
-  @media screen and (max-width: 900px) {
-    height: 30vh;
+  @media screen and (max-height: 700px) {
+    height: 85vh;
   }
 }
 .mailing__title {
-    font-size: 24px;
-    color: $mailing-title;
-    font-style: italic;
+  font-size: 24px;
+  color: $mailing-title;
+  font-style: italic;
 }
 .mailing__input-container {
   @media screen and (max-width: 650px) {
@@ -308,28 +326,30 @@
     padding-left: 30px;
     border: 1px solid $light-gray;
     font-size: 24px;
-    color: $mailing-title;
+    color: #929292;
     font-style: italic;
-
-  }
-  button {
-    font-size: 24px;
-    color: #ffffff;
-    width: 170px;
-    height: 70px;
-    margin-left: 5px;
-    background-color: $btn-col;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s ease;
-    &:hover {
-      background-color: $btn-col-hover;
-      transition: all 0.3s ease;
-    }
     @media screen and (max-width: 650px) {
-      margin-left: 0;
-      width: 400px;
+      width: 100%;
     }
+  }
+}
+button {
+  font-size: 24px;
+  color: #ffffff;
+  width: 170px;
+  height: 70px;
+  margin-left: 5px;
+  background-color: $btn-col;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    background-color: $btn-col-hover;
+    transition: all 0.3s ease;
+  }
+  @media screen and (max-width: 650px) {
+    margin-left: 0;
+    width: 100%;
   }
 }
 .footer {
@@ -343,6 +363,13 @@
   }
   @media screen and (max-width: 650px) {
     flex-direction: column;
+    height: 35vh;
+    .footer__item_1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
   }
 }
 .footer__item_2,

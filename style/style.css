@@ -81,6 +81,11 @@ p {
   gap: 25px;
   padding: 120px 0 140px 0;
 }
+@media screen and (max-width: 425px) {
+  .about {
+    padding: 50px 0 40px 0;
+  }
+}
 
 .about__title {
   text-align: center;
@@ -127,6 +132,22 @@ p {
     grid-template-areas: "item1 item2" "item3 item4" "item5 item6";
   }
 }
+@media screen and (max-height: 650px) {
+  .work {
+    height: 260vh;
+  }
+}
+@media screen and (max-width: 380px) {
+  .work {
+    height: 190vh;
+  }
+}
+
+.work__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .grid-item1 {
   grid-area: item1;
@@ -170,6 +191,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 33px;
 }
 @media screen and (max-width: 1480px) {
@@ -196,6 +218,11 @@ p {
     margin: 0;
   }
 }
+@media screen and (max-height: 645px) {
+  .content-grid-item {
+    height: 100%;
+  }
+}
 
 @media screen and (max-width: 600px) {
   .grid-item2__content {
@@ -210,6 +237,14 @@ p {
 }
 
 @media screen and (max-width: 600px) {
+  .content-grid-item__bottom-item2,
+  .content-grid-item__bottom-item6,
+  .content-grid-item__bottom-item3 {
+    display: none;
+  }
+}
+@media screen and (max-height: 645px) {
+  .content-grid-item__bottom-item2,
   .content-grid-item__bottom-item6,
   .content-grid-item__bottom-item3 {
     display: none;
@@ -370,9 +405,9 @@ p {
   justify-content: center;
   gap: 40px;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-height: 700px) {
   .mailing {
-    height: 30vh;
+    height: 85vh;
   }
 }
 
@@ -396,10 +431,16 @@ p {
   padding-left: 30px;
   border: 1px solid #f7f7f7;
   font-size: 24px;
-  color: #848789;
+  color: #929292;
   font-style: italic;
 }
-.mailing__input-container button {
+@media screen and (max-width: 650px) {
+  .mailing__input-container input {
+    width: 100%;
+  }
+}
+
+button {
   font-size: 24px;
   color: #ffffff;
   width: 170px;
@@ -410,14 +451,14 @@ p {
   cursor: pointer;
   transition: 0.3s ease;
 }
-.mailing__input-container button:hover {
+button:hover {
   background-color: #4e836f;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 650px) {
-  .mailing__input-container button {
+  button {
     margin-left: 0;
-    width: 400px;
+    width: 100%;
   }
 }
 
@@ -435,6 +476,13 @@ p {
 }
 @media screen and (max-width: 650px) {
   .footer {
+    flex-direction: column;
+    height: 35vh;
+  }
+  .footer .footer__item_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
   }
 }
