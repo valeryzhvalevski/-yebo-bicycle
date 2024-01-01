@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import "./reset.css";
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap");
 * {
@@ -375,6 +376,50 @@ p {
   background: url("../img/shop3-3.png") center/cover no-repeat;
 }
 
+.item-row-item_1,
+.item-row-item_2,
+.shop__item-row,
+.column2-1,
+.column2-2,
+.row3-1,
+.shop__row-item_1,
+.shop__row-item_2 {
+  position: relative;
+  overflow: hidden;
+}
+.item-row-item_1:hover::before,
+.item-row-item_2:hover::before,
+.shop__item-row:hover::before,
+.column2-1:hover::before,
+.column2-2:hover::before,
+.row3-1:hover::before,
+.shop__row-item_1:hover::before,
+.shop__row-item_2:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(100, 194, 158, 0.3960784314);
+  z-index: 1;
+}
+.item-row-item_1:hover::after,
+.item-row-item_2:hover::after,
+.shop__item-row:hover::after,
+.column2-1:hover::after,
+.column2-2:hover::after,
+.row3-1:hover::after,
+.shop__row-item_1:hover::after,
+.shop__row-item_2:hover::after {
+  content: url("../img/shop-ico.png");
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Центрирование иконки */
+  z-index: 2; /* Чтобы иконка была выше маски */
+}
+
 .shop__bottom {
   height: 200px;
   background-color: #282f35;
@@ -394,7 +439,7 @@ p {
   transition: 0.3s;
 }
 .shop__bottom a:hover {
-  background-color: #9199a1;
+  background-color: rgba(100, 194, 158, 0.3960784314);
 }
 
 .mailing {
