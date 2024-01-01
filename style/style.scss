@@ -289,6 +289,11 @@
     height: 30vh;
   }
 }
+.mailing__title {
+    font-size: 24px;
+    color: $mailing-title;
+    font-style: italic;
+}
 .mailing__input-container {
   @media screen and (max-width: 650px) {
     display: flex;
@@ -301,15 +306,24 @@
     width: 400px;
     height: 70px;
     padding-left: 30px;
+    border: 1px solid $light-gray;
+    font-size: 24px;
+    color: $mailing-title;
+    font-style: italic;
+
   }
   button {
+    font-size: 24px;
+    color: #ffffff;
     width: 170px;
     height: 70px;
     margin-left: 5px;
+    background-color: $btn-col;
+    border: none;
     cursor: pointer;
     transition: 0.3s ease;
     &:hover {
-      background-color: $hover-text-color;
+      background-color: $btn-col-hover;
       transition: all 0.3s ease;
     }
     @media screen and (max-width: 650px) {
