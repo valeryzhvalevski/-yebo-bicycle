@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Lato", sans-serif;
 }
@@ -73,6 +77,19 @@ p {
   }
 }
 
+@media screen and (max-width: 800px) {
+  .header__link.logo h1 img {
+    animation: zoomInOut 3s infinite alternate;
+  }
+  @keyframes zoomInOut {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+}
 .about {
   background-color: #f7f7f7;
   display: flex;

@@ -37,6 +37,19 @@
     display: block;
   }
 }
+@media screen and (max-width: 800px) {
+  .header__link.logo h1 img {
+    animation: zoomInOut 3s infinite alternate; 
+  }  
+  @keyframes zoomInOut {
+    0% {
+      transform: scale(1); 
+    }
+    100% {
+      transform: scale(1.2); 
+    }
+  }  
+}
 .about {
   background-color: $light-gray;
   display: flex;
