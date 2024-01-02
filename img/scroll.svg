@@ -1,0 +1,40 @@
+<svg width="64" height="64" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id = "n1" d="M122 55L253.379 186.379C254.55 187.55 256.45 187.55 257.621 186.379L389 55" stroke="black" stroke-width="10" stroke-linecap="round"/>
+<path id = "n2" d="M122 188.5L253.379 319.879C254.55 321.05 256.45 321.05 257.621 319.879L389 188.5" stroke="black" stroke-width="10" stroke-linecap="round"/>
+<path id = "n3" d="M122 322L253.379 453.379C254.55 454.55 256.45 454.55 257.621 453.379L389 322" stroke="black" stroke-width="10" stroke-linecap="round"/>
+
+<style>
+
+#n1{
+animation-name: a1;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
+
+#n2{
+animation-name: a1;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+animation-delay: 1s;
+}
+
+#n3{
+animation-name: a1;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+animation-delay: 2s;
+
+}
+
+@keyframes a1 {
+0% {opacity:1}
+50% {opacity:0}
+70% {opacity:1}
+100% {opacity:1}
+}
+
+</style>
+</svg>
