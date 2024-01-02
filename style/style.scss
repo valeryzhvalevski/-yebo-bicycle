@@ -99,11 +99,9 @@
       "item6 "
       "item5";
   }
-
   @media screen and (max-height: 650px) {
     height: 260vh;
   }
-
   @media screen and (max-width: 380px) {
     height: 190vh;
   }
@@ -176,7 +174,6 @@
     height: 100%;
   }
 }
-
 .content-grid-item__bottom-item2,
 .content-grid-item__bottom-item3,
 .content-grid-item__bottom-item6 {
@@ -192,7 +189,6 @@
     display: none;
   }
 }
-
 .content-grid-item__bottom-item2 {
   background: url("../img/work2.png") center/ cover no-repeat;
 }
@@ -251,6 +247,7 @@
 }
 .item-row-item_1 {
   background: url("../img/shop1-1.png") center/ cover no-repeat;
+  transition: background-size 1 ease;
 }
 .item-row-item_2 {
   background: url("../img/shop1-2.png") center/ cover no-repeat;
@@ -275,6 +272,7 @@
 .shop__row {
   width: 100%;
   height: 50%;
+  overflow: hidden;
 }
 .row3-1 {
   background: url("../img/shop3-1.png") center/ cover no-repeat;
@@ -296,11 +294,10 @@
 .row3-1,
 .shop__row-item_1,
 .shop__row-item_2 {
+  cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: 0.3s ease;
-  // background-size:cover;
-  // background-repeat: no-repeat;
+  transition: background-size 1s ease-in-out;
   &::before,
   &::after {
     content: "";
@@ -309,7 +306,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    transition: background-color 0.5s ease;
   }
   &::before {
     background-color: rgba(0, 255, 0, 0);
@@ -334,9 +330,6 @@
   &:hover::after {
     opacity: 1;
   }
-  // &:hover {
-  //   background-size: 120%;
-  // }
 }
 .shop__bottom {
   height: 200px;

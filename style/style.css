@@ -333,6 +333,7 @@ p {
 
 .item-row-item_1 {
   background: url("../img/shop1-1.png") center/cover no-repeat;
+  transition: background-size 1 ease;
 }
 
 .item-row-item_2 {
@@ -364,6 +365,7 @@ p {
 .shop__row {
   width: 100%;
   height: 50%;
+  overflow: hidden;
 }
 
 .row3-1 {
@@ -390,9 +392,10 @@ p {
 .row3-1,
 .shop__row-item_1,
 .shop__row-item_2 {
+  cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: 0.3s ease;
+  transition: background-size 1s ease-in-out;
 }
 .item-row-item_1::before, .item-row-item_1::after,
 .item-row-item_2::before,
@@ -415,7 +418,6 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  transition: background-color 0.5s ease;
 }
 .item-row-item_1::before,
 .item-row-item_2::before,
