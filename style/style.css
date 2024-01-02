@@ -90,6 +90,18 @@ p {
     }
   }
 }
+.header__scroll {
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  .header__scroll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40vh;
+  }
+}
+
 .about {
   background-color: #f7f7f7;
   display: flex;

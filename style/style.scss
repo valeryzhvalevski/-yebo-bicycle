@@ -50,6 +50,14 @@
     }
   }  
 }
+.header__scroll {
+  display: none;
+  @media screen and (max-width: 800px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40vh;  }
+}
 .about {
   background-color: $light-gray;
   display: flex;
